@@ -21,6 +21,7 @@ test("renders the PARFUM OIL city page", async () => {
   const html = await response.text();
   assert.match(html, /Оставить отзыв — PARFUM OIL/);
   assert.match(html, /Ваше мнение/);
+  assert.match(html, /Владимир/);
   assert.match(html, /Яндекс Карты/);
   assert.match(html, /2ГИС/);
   assert.doesNotMatch(html, /codex-preview|SkeletonPreview/);

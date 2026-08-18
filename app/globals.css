@@ -85,9 +85,8 @@ h1 span { display: block; color: var(--red); padding-left: clamp(0px, 5vw, 74px)
 .map-actions a > span:last-child { margin-left: auto; }
 .map-actions a:hover, .map-actions a:focus-visible { transform: translateY(-2px); border-color: var(--ink); background: white; }
 .map-actions a.two-gis { background: var(--sage); border-color: var(--sage); }
-.map-monogram { width: 30px; height: 30px; border-radius: 50%; display: grid; place-items: center; flex: 0 0 auto; font-weight: 600; color: white; }
-.yandex-mark { background: var(--red); }
-.gis-mark { background: var(--ink); }
+.map-logo { width: 30px; height: 30px; object-fit: contain; flex: 0 0 auto; }
+.yandex-logo { width: 24px; }
 .honest-note { max-width: 1360px; margin: 70px auto 0; padding: 34px 40px; display: flex; align-items: center; gap: 28px; background: var(--pink); }
 .honest-note p { margin: 0; max-width: 840px; font-size: clamp(16px, 2vw, 24px); line-height: 1.45; }
 .note-star { color: var(--red); font-size: 42px; }
@@ -156,7 +155,8 @@ footer p, footer span { margin: 0; font-size: 11px; text-transform: uppercase; l
   .store-copy p { font-size: 13px; }
   .map-actions { grid-column: 1 / -1; grid-template-columns: 1fr .72fr; margin-top: 8px; }
   .map-actions a { min-height: 54px; padding: 9px 11px; font-size: 12px; }
-  .map-monogram { width: 27px; height: 27px; }
+  .map-logo { width: 27px; height: 27px; }
+  .yandex-logo { width: 22px; }
   .honest-note { margin-top: 48px; padding: 26px 22px; align-items: flex-start; }
   .note-star { font-size: 28px; }
   .shop-section { min-height: auto; padding: 80px 20px 110px; gap: 40px; }

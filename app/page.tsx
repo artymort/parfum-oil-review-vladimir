@@ -1,11 +1,11 @@
 const stores = [
-  { name: "Гипермаркет «Лента»", address: "Московское шоссе, 2", yandex: "https://yandex.ru/maps/?text=Барнаул%2C%20Московское%20шоссе%2C%202%2C%20Лента", twoGis: "https://2gis.ru/barnaul/search/Московское%20шоссе%202%20Лента" },
-  { name: "ТРЦ «Ашан»", address: "улица Тракторная, 45А", yandex: "https://yandex.ru/maps/?text=Барнаул%2C%20Тракторная%2045А%2C%20Ашан", twoGis: "https://2gis.ru/barnaul/search/Тракторная%2045А%20Ашан" },
-  { name: "ТЦ «Крейсер»", address: "проспект Ленина, 46А", yandex: "https://yandex.ru/maps/?text=Барнаул%2C%20проспект%20Ленина%2046А%2C%20Крейсер", twoGis: "https://2gis.ru/barnaul/search/проспект%20Ленина%2046А%20Крейсер" },
-  { name: "ТЦ «Черемушки»", address: "проспект Строителей, 9Б", yandex: "https://yandex.ru/maps/?text=Барнаул%2C%20проспект%20Строителей%209Б%2C%20Черемушки", twoGis: "https://2gis.ru/barnaul/search/проспект%20Строителей%209Б%20Черемушки" },
-  { name: "ТЦ «Батуринский»", address: "улица Батурина, 20", yandex: "https://yandex.ru/maps/?text=Барнаул%2C%20улица%20Батурина%2020%2C%20Батуринский", twoGis: "https://2gis.ru/barnaul/search/улица%20Батурина%2020%20Батуринский" },
-  { name: "ТЦ «Восток-1»", address: "улица Егорова, 8Б", yandex: "https://yandex.ru/maps/?text=Барнаул%2C%20улица%20Егорова%208Б%2C%20Восток-1", twoGis: "https://2gis.ru/barnaul/search/улица%20Егорова%208Б%20Восток-1" },
-  { name: "ТЦ «Торговые ряды»", address: "улица Большая Московская", yandex: "https://yandex.ru/maps/?text=Барнаул%2C%20Большая%20Московская%2C%20Торговые%20ряды", twoGis: "https://2gis.ru/barnaul/search/Большая%20Московская%20Торговые%20ряды" },
+  { name: "Гипермаркет «Лента»", address: "Московское шоссе, 2", yandex: "https://yandex.ru/maps/?text=Владимир%2C%20Московское%20шоссе%2C%202%2C%20Лента", twoGis: "https://2gis.ru/vladimir/search/Московское%20шоссе%202%20Лента" },
+  { name: "ТРЦ «Ашан»", address: "улица Тракторная, 45А", yandex: "https://yandex.ru/maps/?text=Владимир%2C%20Тракторная%2045А%2C%20Ашан", twoGis: "https://2gis.ru/vladimir/search/Тракторная%2045А%20Ашан" },
+  { name: "ТЦ «Крейсер»", address: "проспект Ленина, 46А", yandex: "https://yandex.ru/maps/?text=Владимир%2C%20проспект%20Ленина%2046А%2C%20Крейсер", twoGis: "https://2gis.ru/vladimir/search/проспект%20Ленина%2046А%20Крейсер" },
+  { name: "ТЦ «Черемушки»", address: "проспект Строителей, 9Б", yandex: "https://yandex.ru/maps/?text=Владимир%2C%20проспект%20Строителей%209Б%2C%20Черемушки", twoGis: "https://2gis.ru/vladimir/search/проспект%20Строителей%209Б%20Черемушки" },
+  { name: "ТЦ «Батуринский»", address: "улица Батурина, 20", yandex: "https://yandex.ru/maps/?text=Владимир%2C%20улица%20Батурина%2020%2C%20Батуринский", twoGis: "https://2gis.ru/vladimir/search/улица%20Батурина%2020%20Батуринский" },
+  { name: "ТЦ «Восток-1»", address: "улица Егорова, 8Б", yandex: "https://yandex.ru/maps/?text=Владимир%2C%20улица%20Егорова%208Б%2C%20Восток-1", twoGis: "https://2gis.ru/vladimir/search/улица%20Егорова%208Б%20Восток-1" },
+  { name: "ТЦ «Торговые ряды»", address: "улица Большая Московская", yandex: "https://yandex.ru/maps/?text=Владимир%2C%20Большая%20Московская%2C%20Торговые%20ряды", twoGis: "https://2gis.ru/vladimir/search/Большая%20Московская%20Торговые%20ряды" },
 ];
 
 const Arrow = () => <span aria-hidden="true">↗</span>;
@@ -18,7 +18,7 @@ export default function Home() {
           <a className="wordmark" href="#top" aria-label="Parfum Oil — наверх">PARFUM OIL</a>
           <a className="city-chip" href="#stores">
             <span className="city-dot" aria-hidden="true" />
-            Барнаул
+            Владимир
             <span className="city-count">7 адресов</span>
           </a>
         </nav>
@@ -64,8 +64,8 @@ export default function Home() {
               <span className="store-number">{String(index + 1).padStart(2, "0")}</span>
               <div className="store-copy"><h3>{store.name}</h3><p>{store.address}</p></div>
               <div className="map-actions">
-                <a href={store.yandex} target="_blank" rel="noreferrer"><span className="map-monogram yandex-mark">Я</span>Яндекс Карты<Arrow /></a>
-                <a className="two-gis" href={store.twoGis} target="_blank" rel="noreferrer"><span className="map-monogram gis-mark">2</span>2ГИС<Arrow /></a>
+                <a href={store.yandex} target="_blank" rel="noreferrer"><img className="map-logo yandex-logo" src="/yandex-maps-logo.svg" alt="" aria-hidden="true" />Яндекс Карты<Arrow /></a>
+                <a className="two-gis" href={store.twoGis} target="_blank" rel="noreferrer"><img className="map-logo" src="/2gis-icon-logo.svg" alt="" aria-hidden="true" />2ГИС<Arrow /></a>
               </div>
             </article>
           ))}
@@ -94,7 +94,7 @@ export default function Home() {
       <footer>
         <a className="wordmark" href="#top">PARFUM OIL</a>
         <p>Парфюмерные масла, которые остаются в памяти.</p>
-        <span>Барнаул · 2026</span>
+        <span>Владимир · 2026</span>
       </footer>
     </main>
   );
