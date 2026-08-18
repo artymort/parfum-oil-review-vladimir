@@ -61,11 +61,11 @@ img { display: block; max-width: 100%; }
 }
 
 .wordmark {
-  font-size: 15px;
-  font-weight: 600;
-  letter-spacing: .2em;
-  white-space: nowrap;
+  display: inline-flex;
+  align-items: center;
 }
+
+.wordmark img { width: 132px; height: auto; }
 
 .city {
   display: inline-flex;
@@ -235,6 +235,8 @@ img { display: block; max-width: 100%; }
 
 .discover { margin-top: var(--section-rhythm); }
 .discover > h2 { margin-left: var(--content-inset); }
+.discover h2 { display: flex; align-items: center; gap: 10px; }
+.heading-logo { width: 190px; height: auto; }
 .discover-grid { display: grid; grid-template-columns: 1fr 1fr; gap: 10px; margin-top: var(--section-rhythm); }
 
 .discover-card {
@@ -267,7 +269,7 @@ footer {
   border-top: 1px solid var(--line);
 }
 
-footer span { font-size: 10px; font-weight: 600; letter-spacing: .16em; }
+.footer-logo { width: 88px; height: auto; }
 footer small { color: var(--muted); font-size: 9px; }
 
 @media (max-width: 520px) {
@@ -285,7 +287,7 @@ footer small { color: var(--muted); font-size: 9px; }
 
 @media (max-width: 370px) {
   .page-shell { --content-inset: 17px; }
-  .wordmark { font-size: 13px; }
+  .wordmark img { width: 118px; }
   .hero { min-height: 290px; }
   .hero-copy { width: 67%; min-height: 290px; padding-left: var(--content-inset); }
   .hero h1 { font-size: 27px; }
