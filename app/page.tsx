@@ -8,94 +8,85 @@ const stores = [
   { name: "ТЦ «Торговые ряды»", address: "улица Большая Московская", yandex: "https://yandex.ru/maps/?text=Владимир%2C%20Большая%20Московская%2C%20Торговые%20ряды", twoGis: "https://2gis.ru/vladimir/search/Большая%20Московская%20Торговые%20ряды" },
 ];
 
-const Arrow = () => <span aria-hidden="true">↗</span>;
-
 export default function Home() {
   return (
-    <main>
-      <section className="hero">
-        <nav className="topbar" aria-label="Основная навигация">
-          <a className="wordmark" href="#top" aria-label="Parfum Oil — наверх">PARFUM OIL</a>
-          <a className="city-chip" href="#stores">
-            <span className="city-dot" aria-hidden="true" />
-            Владимир
-            <span className="city-count">7 адресов</span>
-          </a>
-        </nav>
+    <main className="page">
+      <div className="link-page">
+        <header className="brand-bar">
+          <span className="wordmark">PARFUM OIL</span>
+          <span className="city"><i aria-hidden="true" /> Владимир</span>
+        </header>
 
-        <div className="hero-grid" id="top">
-          <div className="hero-copy">
-            <p className="eyebrow"><span>01</span> Спасибо, что выбрали нас</p>
-            <h1>Ваше мнение —<span>наш лучший ингредиент.</span></h1>
-            <p className="hero-lead">Выберите магазин, в котором были, поделитесь впечатлением — и покажите отзыв консультанту.</p>
-            <a className="primary-cta" href="#stores">Выбрать магазин <Arrow /></a>
+        <section className="intro">
+          <p className="kicker">Отзыв → пробник в подарок</p>
+          <h1>Выберите магазин</h1>
+          <p className="intro-text">
+            Найдите адрес, где вы были, и выберите удобные карты для отзыва.
+          </p>
+        </section>
+
+        <section className="addresses" aria-labelledby="addresses-title">
+          <div className="section-label">
+            <h2 id="addresses-title">Наши адреса</h2>
+            <span>{stores.length} точек</span>
           </div>
 
-          <div className="sample-stage" aria-label="Пробник аромата в подарок">
-            <div className="orbit orbit-one" />
-            <div className="orbit orbit-two" />
-            <div className="vial-shadow" />
-            <div className="vial" aria-hidden="true">
-              <div className="vial-cap" />
-              <div className="vial-glass"><span>PARFUM</span><b>OIL</b><i>sample</i></div>
+          <div className="address-list">
+            {stores.map((store, index) => (
+              <details className="address-item" key={store.name}>
+                <summary>
+                  <span className="address-number">{String(index + 1).padStart(2, "0")}</span>
+                  <span className="address-copy">
+                    <strong>{store.name}</strong>
+                    <small>{store.address}</small>
+                  </span>
+                  <span className="toggle" aria-hidden="true" />
+                </summary>
+                <div className="map-buttons">
+                  <a href={store.yandex} target="_blank" rel="noreferrer">
+                    <img className="map-logo yandex-logo" src="/yandex-maps-logo.svg" alt="" aria-hidden="true" />
+                    <span>Яндекс Карты</span>
+                    <b aria-hidden="true">↗</b>
+                  </a>
+                  <a className="gis-button" href={store.twoGis} target="_blank" rel="noreferrer">
+                    <img className="map-logo" src="/2gis-icon-logo.svg" alt="" aria-hidden="true" />
+                    <span>2ГИС</span>
+                    <b aria-hidden="true">↗</b>
+                  </a>
+                </div>
+              </details>
+            ))}
+          </div>
+        </section>
+
+        <aside className="reward">
+          <span className="reward-mark" aria-hidden="true">P</span>
+          <p><strong>Покажите опубликованный отзыв консультанту</strong> и выберите пробник аромата.</p>
+        </aside>
+
+        <section className="more" aria-labelledby="more-title">
+          <div className="section-label">
+            <h2 id="more-title">Ещё от PARFUM OIL</h2>
+          </div>
+          <div className="more-grid">
+            <div className="more-card catalog-card">
+              <span>Интернет-магазин</span>
+              <strong>Найти свой аромат</strong>
+              <small>Ссылку добавим следующим шагом</small>
             </div>
-            <div className="gift-seal"><span>ваш</span><strong>ПРОБНИК</strong><span>в подарок</span></div>
-            <p className="stage-note">Аромат выбираете вы</p>
+            <a className="more-card social-card" href="https://www.instagram.com/parfum_oil_/" target="_blank" rel="noreferrer">
+              <span>Instagram</span>
+              <strong>@parfum_oil_</strong>
+              <small>Новости и новинки <b aria-hidden="true">↗</b></small>
+            </a>
           </div>
-        </div>
+        </section>
 
-        <ol className="steps" aria-label="Как получить пробник">
-          <li><span>01</span> Найдите свой магазин</li>
-          <li><span>02</span> Выберите удобные карты</li>
-          <li><span>03</span> Поделитесь впечатлением</li>
-        </ol>
-      </section>
-
-      <section className="stores-section" id="stores">
-        <div className="section-heading">
-          <div><p className="eyebrow"><span>02</span> Наши адреса</p><h2>Где вы были?</h2></div>
-          <p className="section-intro">Нажмите на нужный адрес, затем выберите площадку — Яндекс Карты или 2ГИС.</p>
-          <span className="huge-count" aria-hidden="true">07</span>
-        </div>
-
-        <div className="store-list">
-          {stores.map((store, index) => (
-            <article className="store-card" key={store.name}>
-              <span className="store-number">{String(index + 1).padStart(2, "0")}</span>
-              <div className="store-copy"><h3>{store.name}</h3><p>{store.address}</p></div>
-              <div className="map-actions">
-                <a href={store.yandex} target="_blank" rel="noreferrer"><img className="map-logo yandex-logo" src="/yandex-maps-logo.svg" alt="" aria-hidden="true" />Яндекс Карты<Arrow /></a>
-                <a className="two-gis" href={store.twoGis} target="_blank" rel="noreferrer"><img className="map-logo" src="/2gis-icon-logo.svg" alt="" aria-hidden="true" />2ГИС<Arrow /></a>
-              </div>
-            </article>
-          ))}
-        </div>
-
-        <div className="honest-note">
-          <span className="note-star" aria-hidden="true">✳</span>
-          <p>Нам важны ваши настоящие впечатления — так мы становимся лучше. После публикации покажите отзыв консультанту и выберите пробник.</p>
-        </div>
-      </section>
-
-      <section className="shop-section" id="shop">
-        <div className="shop-copy">
-          <p className="eyebrow light"><span>03</span> Продолжить знакомство</p>
-          <h2>Аромат, который<br />захочется забрать с собой.</h2>
-          <p>Скоро здесь появятся хиты сезона с переходом прямо в карточку товара интернет-магазина.</p>
-          <a className="shop-link" href="#top">В интернет-магазин <Arrow /></a>
-        </div>
-        <div className="notes-stack" aria-label="Будущая подборка ароматов">
-          <article className="note-card note-card-one"><span>01 / woody</span><strong>Кедр<br />&amp; инжир</strong><i>скоро</i></article>
-          <article className="note-card note-card-two"><span>02 / floral</span><strong>Ирис<br />&amp; мускус</strong><i>скоро</i></article>
-          <article className="note-card note-card-three"><span>03 / amber</span><strong>Амбра<br />&amp; ваниль</strong><i>скоро</i></article>
-        </div>
-      </section>
-
-      <footer>
-        <a className="wordmark" href="#top">PARFUM OIL</a>
-        <p>Парфюмерные масла, которые остаются в памяти.</p>
-        <span>Владимир · 2026</span>
-      </footer>
+        <footer>
+          <span>PARFUM OIL</span>
+          <small>Владимир</small>
+        </footer>
+      </div>
     </main>
   );
 }

@@ -19,8 +19,8 @@ test("renders the PARFUM OIL city page", async () => {
   assert.match(response.headers.get("content-type") ?? "", /^text\/html\b/i);
 
   const html = await response.text();
-  assert.match(html, /Оставить отзыв — PARFUM OIL/);
-  assert.match(html, /Ваше мнение/);
+  assert.match(html, /Адреса PARFUM OIL — Владимир/);
+  assert.match(html, /Выберите магазин/);
   assert.match(html, /Владимир/);
   assert.match(html, /Яндекс Карты/);
   assert.match(html, /2ГИС/);

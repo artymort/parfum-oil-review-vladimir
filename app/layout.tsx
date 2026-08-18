@@ -7,8 +7,8 @@ export async function generateMetadata(): Promise<Metadata> {
   const host = requestHeaders.get("x-forwarded-host") ?? requestHeaders.get("host") ?? "localhost:3000";
   const protocol = requestHeaders.get("x-forwarded-proto") ?? (host.startsWith("localhost") ? "http" : "https");
   const imageUrl = `${protocol}://${host}/og.png`;
-  const title = "Оставить отзыв — PARFUM OIL";
-  const description = "Выберите магазин PARFUM OIL во Владимире, поделитесь впечатлением и получите пробник аромата.";
+  const title = "Адреса PARFUM OIL — Владимир";
+  const description = "Выберите магазин PARFUM OIL во Владимире и удобную площадку для отзыва.";
 
   return {
     title,
