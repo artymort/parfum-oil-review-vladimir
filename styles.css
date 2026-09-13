@@ -274,9 +274,27 @@ img { display: block; max-width: 100%; }
 
 .discover-card > span { font-size: 9px; letter-spacing: .08em; text-transform: uppercase; opacity: .63; }
 .discover-card > strong { max-width: 150px; font-size: 20px; font-weight: 400; line-height: 1.05; letter-spacing: -.035em; }
-.discover-card > small { font-size: 9px; line-height: 1.35; opacity: .58; }
+.discover-card > small {
+  width: 100%;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: 8px;
+  font-size: 9px;
+  line-height: 1.35;
+  opacity: .58;
+}
 .discover-card b { font-size: 0; font-weight: 400; }
-.discover-card b::before { content: "→"; font-size: 13px; }
+.discover-card b {
+  width: 18px;
+  height: 18px;
+  margin-left: auto;
+  display: inline-grid;
+  place-items: center;
+  flex: 0 0 18px;
+  line-height: 1;
+}
+.discover-card b::before { content: "→"; font-size: 13px; line-height: 1; }
 .shop-card { background: #e8e8d7; transition: transform 150ms ease; }
 .shop-card:hover { transform: translateY(-2px); }
 .shop-card:focus-visible { outline: 2px solid var(--red); outline-offset: 2px; }
