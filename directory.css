@@ -1,0 +1,148 @@
+.directory-page .page-shell {
+  padding-bottom: 30px;
+}
+
+.directory-intro {
+  position: relative;
+  min-height: 220px;
+  padding: 30px;
+  overflow: hidden;
+  border: 1px solid #eeede8;
+  border-radius: 20px;
+  background: var(--cream);
+  isolation: isolate;
+}
+
+.directory-intro::before,
+.directory-intro::after {
+  content: "";
+  position: absolute;
+  z-index: -1;
+  border-radius: 50%;
+}
+
+.directory-intro::before {
+  width: 240px;
+  height: 240px;
+  right: -68px;
+  top: -92px;
+  background: rgba(168, 182, 155, .55);
+}
+
+.directory-intro::after {
+  width: 165px;
+  height: 165px;
+  right: 54px;
+  bottom: -116px;
+  border: 28px solid rgba(150, 25, 20, .09);
+}
+
+.directory-intro h1 {
+  margin-top: 0;
+  max-width: 340px;
+  font-size: clamp(44px, 10vw, 64px);
+  font-weight: 500;
+  line-height: .88;
+  letter-spacing: -.055em;
+}
+
+.directory-intro p {
+  max-width: 330px;
+  margin-top: 22px;
+  color: #5d5e56;
+  font-size: 13px;
+  line-height: 1.45;
+}
+
+.directory-grid {
+  display: grid;
+  grid-template-columns: repeat(2, minmax(0, 1fr));
+  gap: 8px;
+  margin-top: 16px;
+}
+
+.directory-grid a {
+  min-height: 66px;
+  padding: 14px 16px;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: 10px;
+  border: 1px solid var(--line);
+  border-radius: 15px;
+  background: var(--white);
+  transition: transform 150ms ease, border-color 150ms ease, background-color 150ms ease;
+}
+
+.directory-grid a:nth-child(4n + 2),
+.directory-grid a:nth-child(4n + 3) {
+  background: var(--sage-light);
+}
+
+.directory-grid a:hover {
+  transform: translateY(-1px);
+  border-color: #c7c8c0;
+}
+
+.directory-grid a:focus-visible {
+  outline: 2px solid var(--red);
+  outline-offset: 2px;
+}
+
+.directory-grid span {
+  min-width: 0;
+  font-size: 17px;
+  font-weight: 500;
+  line-height: 1.08;
+  letter-spacing: -.025em;
+}
+
+.directory-grid b {
+  flex: 0 0 auto;
+  color: var(--red);
+  font-size: 15px;
+  font-weight: 400;
+}
+
+.directory-page footer {
+  margin-top: 24px;
+}
+
+@media (max-width: 430px) {
+  .directory-intro {
+    min-height: 210px;
+    padding: 25px 21px;
+    border-radius: 17px;
+  }
+
+  .directory-intro::before {
+    width: 200px;
+    height: 200px;
+    right: -70px;
+    top: -76px;
+  }
+
+  .directory-intro h1 {
+    font-size: 47px;
+  }
+
+  .directory-intro p {
+    max-width: 250px;
+    font-size: 12px;
+  }
+
+  .directory-grid a {
+    min-height: 62px;
+    padding: 12px 13px;
+  }
+
+  .directory-grid span {
+    font-size: 15px;
+  }
+}
+
+@media (max-width: 340px) {
+  .directory-grid {
+    grid-template-columns: 1fr;
+  }
+}
